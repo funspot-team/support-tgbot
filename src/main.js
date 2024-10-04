@@ -97,6 +97,12 @@ bot.on(message('photo'), (ctx) => {
   userState[ctx.from.id] = null;
 });
 
+bot.catch((err, ctx) => {
+  console.log(`Ошибка у пользователя ${ctx.from.id}:`, err);
+  bot.telegram.sendMessage(SUPPORT_GROUP_CHAT_ID, `Ошибка VDS Support Bot. Произошла у пользователя @${ctx.from.username}: ${err.message}`);
+  ctx.reply('Произошла ошибка. Пожалуйста, попробуйте позже.');
+});
+
 bot.launch();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
