@@ -22,6 +22,7 @@ const sendMainMenu = (ctx) => {
 };
 const sendThankMessage = (ctx) => {
   ctx.reply('Спасибо! Мы обязательно вернемся с обратной связью');
+  sendMainMenu(ctx);
 }
 
 bot.start((ctx) => {
