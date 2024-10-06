@@ -62,6 +62,10 @@ bot.action('report_issue', (ctx) => {
 });
 
 bot.on(message('text'), (ctx) => {
+  if (ctx.chat.type !== 'private') {
+    return;
+  }
+
   const state = userState[ctx.from.id];
 
   if (state === 'feedback') {
@@ -84,6 +88,10 @@ bot.on(message('text'), (ctx) => {
 });
 
 bot.on(message('photo'), (ctx) => {
+  if (ctx.chat.type !== 'private') {
+    return;
+  }
+
   const state = userState[ctx.from.id];
 
   if (state === 'report_issue') {
