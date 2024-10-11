@@ -81,7 +81,7 @@ bot.on(message('text'), (ctx) => {
     bot.telegram.sendMessage(SUPPORT_GROUP_CHAT_ID, `Сообщение о проблеме от @${ctx.from.username}: ${ctx.message.text}`);
     sendThankMessage(ctx);
   } else {
-    ctx.reply('Пожалуйста, выберите действие через меню.');
+    ctx.reply('Пожалуйста, отправьте команду /support и выберите действие через меню');
   }
 
   userState[ctx.from.id] = null;
