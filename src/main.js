@@ -2,7 +2,7 @@ import { Telegraf, Markup } from 'telegraf';
 import config from 'config';
 import { message } from 'telegraf/filters';
 
-const SUPPORT_GROUP_CHAT_ID = -4568979226;
+const SUPPORT_GROUP_CHAT_ID = -1002479324013;
 const ADD_NEW_SPOT_GROUP_CHAT_ID = -1002425822144;
 
 const bot = new Telegraf(config.get('TELEGRAM_BOT_TOKEN'));
